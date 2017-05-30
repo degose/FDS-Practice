@@ -17,122 +17,132 @@
 var student = ['arumi', 'semin', 'hyuni', 'jidori', 'ggoming', 'sejung', 'yoonji', 'jisun', 'heysoo', 'narae'];
 
 var arumi = {
-    name     : 'arumi',
-    age      : 25,
-    school: {
-        name: 'fastcampus',
-        grade: 2,
+    name         : 'arumi',
+    gender       : 'female',
+    age          : 25,
+    school       : {
+        name     : 'fastcampus',
+        grade    : 2,
         major    : 'design',
         sub_major: 'webprogramming',
     },
-    family   : ['mother','father','brother','sister'],
-    hobby    : 'football'
+    family       : ['mother','father','brother','sister'],
+    hobby        : 'football'
 };
 var semin = {
-    name     : 'semin',
-    age      : 27,
-    school: {
-        name: 'fastcampus',
-        grade: 1,
+    name         : 'semin',
+    gender       : 'female',
+    age          : 27,
+    school       : {
+        name     : 'fastcampus',
+        grade    : 1,
         major    : 'design',
         sub_major: 'frontendevelopment',
     },
-    family   : [],
-    hobby    : 'football'
+    family       : [],
+    hobby        : 'football'
 };
 var hyuni = {
-    name     : 'hyuni',
-    age      : 21,
-    school: {
-        name: 'hala university',
-        grade: 4,
+    name         : 'hyuni',
+    gender       : 'female',
+    age          : 21,
+    school       : {
+        name     : 'hala university',
+        grade    : 4,
         major    : 'science',
         sub_major: 'art',
     },
-    family   : ['mother','father','brother','sister'],
-    hobby    : 'nail-art'
+    family       : ['mother','father','brother','sister'],
+    hobby        : 'nail-art'
 };
 var jidori = {
-    name     : 'jidori',
-    age      : 24,
-    school: {
-        name: 'hala university',
-        grade: 2,
+    name         : 'jidori',
+    gender       : 'male',
+    age          : 24,
+    school       : {
+        name     : 'hala university',
+        grade    : 2,
         major    : 'art',
         sub_major: 'math',
     },
-    family   : ['mother','father','brother','sister'],
-    hobby    : 'baseball'
+    family       : ['mother','father','brother','sister'],
+    hobby        : 'baseball'
 };
 var ggoming = {
-    name     : 'ggoming',
-    age      : 21,
-    school: {
-        name: 'jeju university',
-        grade: 2,
+    name         : 'ggoming',
+    gender       : 'female',
+    age          : 21,
+    school       : {
+        name     : 'jeju university',
+        grade    : 2,
         major    : 'art',
         sub_major: 'math',
     },
-    family   : ['mother','father','brother','sister'],
-    hobby    : 'baseball'
+    family       : ['mother','father','brother','sister'],
+    hobby        : 'baseball'
 };
 var sejung = {
-    name     : 'sejung',
-    age      : 28,
-    school: {
-        name: 'sehwa highschool',
-        grade: 2,
+    name         : 'sejung',
+    gender       : 'male',
+    age          : 28,
+    school       : {
+        name     : 'sehwa highschool',
+        grade    : 2,
         major    : 'english',
         sub_major: 'art',
     },
-    family   : ['mother','father','brother'],
-    hobby    : 'baseball'
+    family       : ['mother','father','brother'],
+    hobby        : 'baseball'
 };
 var yoonji = {
-    name     : 'yoonji',
-    age      : 30,
-    school: {
-        name: 'jeju university',
-        grade: 4,
-        major    : 'english',
+        name       :     'yoonji',
+        gender:    'female',
+        age        :     30,
+        school:    {
+        name:      'jeju university',
+        grade:     4,
+        major      :     'english',
         sub_major: 'math',
-    },
-    family   : ['mother','father','brother','sister'],
-    hobby    : 'dance'
+        },
+        family     :     ['mother','father','brother','sister'],
+        hobby      :     'dance'
 };
 var jisun = {
-    name     : 'jisun',
-    age      : 29,
-    school: {
-        name: 'fastcampus',
-        grade: 2,
+    name         : 'jisun',
+    gender       : 'female',
+    age          : 29,
+    school       : {
+        name     : 'fastcampus',
+        grade    : 2,
         major    : 'english',
         sub_major: 'science',
     },
-    family   : ['mother','father','brother','sister'],
-    hobby    : 'pingpong'
+    family       : ['mother','father','brother','sister'],
+    hobby        : 'pingpong'
 };
 var heysoo = {
-    name     : 'heysoo',
-    age      : 20,
-    school: {
-        name: 'FIT',
-        grade: 3,
+    name         : 'heysoo',
+    gender       : 'male',
+    age          : 20,
+    school       : {
+        name     : 'FIT',
+        grade    : 3,
         major    : 'fashion-design',
         sub_major: 'math',
     },
-    family   : ['mother','father','sister'],
-    hobby    : 'dance'
+    family       : ['mother','father','sister'],
+    hobby        : 'dance'
 };
 var narae = {
-    name     : 'narae',
-    age      : 20,
-    school: {
-        name: 'FIT',
-        grade: 4,
+    name         : 'narae',
+    gender       : 'female',
+    age          : 20,
+    school       : {
+        name     : 'FIT',
+        grade    : 4,
         major    : 'fashion-design',
         sub_major: 'english',
     },
-    family   : ['mother','father','sister'],
-    hobby    : 'shopping'
+    family       : ['mother','father','sister'],
+    hobby        : 'shopping'
 };
