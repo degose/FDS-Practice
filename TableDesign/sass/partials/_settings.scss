@@ -1,0 +1,47 @@
+// ! seeting.scss
+
+
+$base-font-size: 10px !default;
+$leading-scale: 1.5;
+$leading: $base-font-size * $leading-scale;
+$toggle-classname: 'show-grid';
+$guide-height: 700vh;
+$columns: 12;
+$column-width: 68px;
+$column-color: rgba(#fb8989, 0.35);
+$gutter-position: 'split';
+$gutter-width: 30px;
+$half-gutter-width: $gutter-width/2;
+
+$row-height: 30px;
+
+
+
+// 페이지 총 폭의 길이를 구하는 함수
+// 70px * 12 + 20px * 12
+// ($column-width + $gutter-width) * $columns
+$page-width: ($column-width + $gutter-width) * $columns;
+
+// 컬럼 개수에 따른 폭(width) 구하는 공식
+// = 컬럼_폭 × 컬럼_개수 + 거터_폭(합) * (컬럼_개수 - 1)
+// calc( 70px * $i + (10px * 2) * ($i - 1) )
+@function column-width($n) {
+  @return $column-width * $n + $gutter-width * ($n - 1);
+}
+// 옵셋 개수에 따른 마진(margin-left) 구하는 공식
+// = 컬럼_폭 × 컬럼_개수 + (컬럼_폭 + 거터_절반_폭)
+@function offset-width($n) {
+  @return column-width($n) + ($gutter-width + $half-gutter-width);
+}
+// Isolate Floating 방법 사용 시, 사용되는 order-width() 함수
+@function order-width($n){
+  @return $half-gutter-width + (($gutter-width + $column-width) * ($n - 1));
+}
+// row-height
+@function row-height($n){
+  @return $leading * ($n);
+}
+// row-height
+@function gutter-width($n){
+  @return $gutter-width * ($n);
+}

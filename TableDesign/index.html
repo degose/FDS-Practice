@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Table Design</title>
+  <link rel="stylesheet" href="./css/modules/style.css">
+</head>
+<body>
+  <header>
+    <div class="dashboard-bg">
+      <div class="wrapper">
+        <div class="col is-2">
+          <h1 class="logo">
+            <a href="index.html">QUANTUM</a>
+          </h1>
+        </div>
+        <div class="col is-4">
+          <nav class="navigation">
+            <h2 class="header-heading a11y-hidden">메인 메뉴</h2>
+            <ul class="main-menu">
+              <li><a href="#">Dashboard</a></li>
+              <li><a href="#">Statistics</a></li>
+              <li><a href="#">Pages</a></li>
+              <li><button class="btn-more-main-menu" type="submit">더보기</button></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="col is-3">
+          <form class="search-form">
+            <label for="search" class="a11y-hidden">검색</label>
+            <input type="text" name="search" value="" placeholder="Search">
+            <button type="" class="search-btn">검색</button>
+          </form>
+        </div>
+        <div class="user-aria col is-3">
+          <div class="alram-group">
+            <div class="alram-icon">알람</div>
+            <div class="alram-icon-new">새로운 알람 표시</div>
+          </div>
+          <img src="./css/image/10m.jpeg" alt="">
+          <p class="user-name">RonaldHenry</p>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="title-container">
+        <div class="col is-12">
+          <h1 class="a11y-hidden">directory</h1>
+          <ul class="directory-list">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Mails</a></li>
+          </ul>
+        </div>
+        <div class="col is-12">
+          <h1 class="mail-heading">Mailbox CRM</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="wrapper">
+    <main class="main">
+        <h1 class="main-heading a11y-hidden">메인 영역</h1>
+        <table>
+          <caption class="a11y-hidden">메일 목록</caption>
+          <thead>
+            <tr>
+              <th class="btn-mail-compose-container"><button type="submit" class="btn-mail-compose">COMPOSE</button></th>
+              <th class="mail-check-container">
+                <form class="mail-check-form">
+                  <input id="mail-check" type="checkbox" name="mail-check" value="">
+                  <label for="mail-check"></label>
+                  <button type="submit" class="btn-mail-dropdown">메일 선택 메뉴</button>
+                </form>
+              </th>
+              <th class="star-check-container"></th>
+              <th class="btn-mail-reload-container">
+                <button class="btn-mail-reload">메일 새로고침</button>
+              </th>
+              <th colspan="2" class="mail-menu-container">
+                <button class="ico-mail btn-mail-download" type="submit">다운로드</button>
+                <button class="ico-mail btn-mail-spammail" type="submit">스펨메일 이동</button>
+                <button class="ico-mail btn-mail-trash" type="submit">휴지통으로 이동</button>
+                <button class="ico-mail btn-mail-folder" type="submit">폴더 이동</button>
+                <button class="ico-mail btn-mail-tag" type="submit">태그 설정</button>
+              </th>
+              <th></th>
+              <th class="mail-search-container">
+                <form>
+                  <input type="text" name="" value="" placeholder="Search">
+                  <label for="" class="a11y-hidden">메일 검색</label>
+                  <button type="">메일 검색</button>
+                </form>
+              </th>
+              <th>
+                <p><span>1-10</span>of<span>100</span></p>
+              </th>
+              <th class="mail-navigation-container">
+                <button type="submit" class="btn-mail-prev">이전 페이지</button>
+                <button type="submit" class="btn-mail-next">다음 페이지</button>
+              </th>
+              <th class="mail-setting-container">
+                <button type="submit" class="btn-mail-setting">메일 설정</button>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="4" class="side-menu">
+                <ul class="side-menu-list">
+                  <li>
+                    <form>
+                      <input type="submit" name="" value="">
+                      <label for="">inbox</label>
+                      <div class="">4</div>
+                    </form>
+                  </li>
+                  <li>
+                    <form>
+                      <input type="submit" name="" value="">
+                      <label for="">draft</label>
+                      <div class="">1</div>
+                    </form>
+                  </li>
+                  <li>
+                    <form>
+                      <input type="submit" name="" value="">
+                      <label for="">Sant Mail</label>
+                    </form>
+                  </li>
+                  <li>
+                    <form>
+                      <input type="submit" name="" value="">
+                      <label for="">Trash</label>
+                      <div class="">21</div>
+                    </form>
+                  </li>
+                </ul>
+              </td>
+              <td class="mail-list-item mail-check">
+                <form>
+                  <input type="checkbox" name="mail-item-check" value="">
+                  <label for="mail-item-check"></label>
+                </form>
+              </td>
+              <td class="mail-list-item star-check">
+                <form>
+                  <input type="checkbox" name="star-check" value="">
+                  <label for="star-check">별표</label>
+                </form>
+              </td>
+              <td class="mail-list-item">상태</td>
+              <td class="mail-list-item">아바타</td>
+              <td class="mail-list-item">이름</td>
+              <td colspan="2" class="mail-list-item">제목</td>
+              <td class="mail-list-item"></td>
+              <td class="mail-list-item">첨부파일</td>
+              <td class="mail-list-item">날짜</td>
+            </tr>
+            <tr>
+              <td colspan="3" class="mail-list-item">mail-list-item</td>
+            </tr>
+            <tr>
+              <td colspan="3" class="mail-list-item">mail-list-item</td>
+            </tr>
+            <tr>
+              <td colspan="3" class="mail-list-item">mail-list-item</td>
+            </tr>
+            <tr>
+              <td rowspan="9" class="category-info">
+                <ul class="category">
+                  <li class="category-1">Project</li>
+                  <li class="category-2">Web</li>
+                  <li class="category-3">Home</li>
+                  <li class="category-4">Work</li>
+                </ul>
+              </td>
+              <td colspan="3" class="mail-list-item">mail-list-item</td>
+            </tr>
+            <tr>
+              <td colspan="3" class="mail-list-item">mail-list-item</td>
+            </tr>
+            <tr>
+              <td colspan="3" class="mail-list-item">mail-list-item</td>
+            </tr>
+            <tr>
+              <td colspan="3" class="mail-list-item">mail-list-item</td>
+            </tr>
+            <tr>
+              <td colspan="3" class="mail-list-item">mail-list-item</td>
+            </tr>
+            <tr>
+              <td colspan="3" class="mail-list-item">mail-list-item</td>
+            </tr>
+            <tr>
+              <td colspan="3" class="mail-list-item">mail-list-item</td>
+            </tr>
+            <tr>
+              <td colspan="3" class="mail-list-item">mail-list-item</td>
+            </tr>
+            <tr>
+              <td colspan="3" class="mail-list-item">mail-list-item</td>
+            </tr>
+          </tbody>
+        </table>
+    </main>
+  </div>
+  <navigation></navigation>
+
+
+
+  <script src="./js/toggleGrid.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script>
+      $(".filter-bg").click(function(e){
+        $(".filter-bg").toggleClass(".filter-bg:active");
+      });
+  </script>
+</body>
+</html>

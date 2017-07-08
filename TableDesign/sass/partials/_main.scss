@@ -1,0 +1,320 @@
+// ! TableDesign main.scss
+
+$table-border-style : 2px solid $base-color-3;
+
+%checkbox-style {
+  input[type="checkbox"] + label{
+    display: inline-block;
+    border: 2px solid $base-color-3;
+    border-radius: 3px;
+    background: #fff;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+  input[type="checkbox"]:checked + label{
+    background: $point-color-1;
+    border: 2px solid $point-color-1;
+    label:after {
+      background: #000 url('../../css/image/ico-checked.svg');
+      content: "";
+      width: 10px;
+      height: 9px;
+    }
+  }
+  input[type="checkbox"] {
+    display: none;
+  }
+}
+
+%star-check-style {
+  input[type="checkbox"] + label {
+    position: absolute;
+    // line-height: row-height(1);
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    overflow: hidden;
+    padding-top: 20px;
+    background: url('../../css/image/icon-star.svg') no-repeat;
+    background-size: 20px;
+    // right: 20px;
+    // bottom: 23px;
+  }
+  label {
+    // line-height: $row-height * 2;
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    overflow: hidden;
+    padding-top: 20px;
+    background: url('../../css/image/icon-star.svg') no-repeat;
+    background-size: 20px;
+  }
+  input[type="checkbox"]:checked + label {
+    background: url('../../css/image/icon-star.svg') no-repeat;
+    background-position-y: 100%;
+  }
+  input {
+    display: none;
+  }
+}
+
+%category-style {
+  background: red;
+  width: 7px;
+  height: 7px;
+  border-radius: 3px;
+}
+
+.main {
+  margin: $row-height $half-gutter-width 0;
+  // background: yellow;
+  width: $page-width - $gutter-width;
+  height: $row-height * 29;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.01), 0 6px 6px rgba(0,0,0,0.01);
+  border-radius: 7px;
+  div {
+    // margin: 0;
+    padding: 0;
+  }
+}
+
+// table 기본 설정
+
+table {
+  width: $page-width - $gutter-width;
+  // width: -100;
+  // display: table;
+  table-layout: fixed;
+  thead {
+    // line-height: ($row-height * 3) - 2;
+    height: $row-height * 3;
+    border-bottom: $table-border-style;
+    // display: flex;
+    // flex-direction: row;
+    th {
+      line-height: ($row-height * 3) - 2;
+      vertical-align: middle;
+    }
+    :last-child {
+      border-right: none;
+      // margin: 0;
+    }
+  }
+  tbody {
+    .side-menu{
+      border-right: $table-border-style;
+      border-bottom: $table-border-style;
+      vertical-align: middle;
+      :last-child {
+        border-bottom: none;
+      }
+    }
+    .category-info {
+      border-right: $table-border-style;
+    }
+    .mail-list-item {
+      line-height: ($row-height * 2) - 2;
+      border-bottom: $table-border-style;
+      :last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+// thead 컨텐츠
+
+.btn-mail-compose-container {
+  border-right: $table-border-style;
+  width: 223px;
+  .btn-mail-compose {
+    background: $point-color-1;
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 20px 58px;
+    cursor: pointer;
+  }
+}
+.mail-check-container {
+  width: 70px;
+  form {
+    margin-bottom: -10px;
+    position: relative;
+    @extend %checkbox-style;
+  }
+  .btn-mail-dropdown {
+    background: url('../../css/image/ico-dropdown.svg');
+    width: 10px;
+    height: 6px;
+    padding: 6px 0 0 0;
+    overflow: hidden;
+    margin-left: 5px;
+    position: absolute;
+    top: 35px;
+    right: 7px;
+  }
+}
+.btn-mail-reload-container {
+  width: 42px;
+  text-align: center;
+  // vertical-align: center;
+  .btn-mail-reload {
+    background: url('../../css/image/icons-mail.svg');
+    // background-size: 16px auto;
+    // background-position: 0 0;
+    // display: block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    padding-top: 16px;
+    cursor: pointer;
+  }
+}
+
+.mail-menu-container {
+  .ico-mail {
+    margin: 0 5px;
+    overflow: hidden;
+    background: url('../../css/image/icons-mail.svg') no-repeat;
+    vertical-align: middle;
+  }
+  .btn-mail-download {
+    width: 16px;
+    height: 16px;
+    padding-top: 16px;
+    background-position: 0 -16px;
+  }
+  .btn-mail-spammail {
+    width: 18px;
+    height: 18px;
+    padding-top: 18px;
+    background-position: 0 -83px;
+  }
+  .btn-mail-trash {
+    width: 14px;
+    height: 14px;
+    padding-top: 14px;
+    background-position: 0 -51px;
+  }
+  .btn-mail-folder {
+    width: 10px;
+    height: 16px;
+    padding-top: 16px;
+    background-position: 0 -149px;
+  }
+  .btn-mail-tag {
+    width: 18px;
+    height: 18px;
+    padding-top: 18px;
+    background-position: 0 -83px;
+  }
+}
+
+.mail-search-container {
+  border-left:  $table-border-style;
+  border-right: $table-border-style;
+  width: 250px;
+  position: relative;
+  input{
+    display: block;
+    width: 100%;
+    height: $row-height * 3;
+    padding: 10px 30px;
+  }
+  button {
+    overflow: hidden;
+    background: url('../../css/image/icons-mail.svg');
+    width: 17px;
+    height: 17px;
+    padding-top: 17px;
+    background-position:0 -34px;
+    vertical-align: middle;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+  }
+}
+
+.mail-navigation-container {
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-around;
+  // width: 238px;
+  // width: 130px;
+  button {
+    // display: inline;
+    width: 14px;
+    height: 14px;
+    overflow: hidden;
+    background: url('../../css/image/icons-mail.svg');
+    padding-top: 14px;
+    vertical-align: middle;
+  }
+  .btn-mail-prev {
+    background-position:0 -101px;
+  }
+  .btn-mail-next {
+    background-position:0 -115px;
+  }
+}
+
+.mail-setting-container {
+  button {
+    width: 19px;
+    height: 20px;
+    padding-top: 20px;
+    overflow: hidden;
+    background: url('../../css/image/icons-mail.svg');
+    background-position:0 -129px;
+    vertical-align: middle;
+  }
+}
+
+
+
+// table body
+
+// mail-list-item
+
+.category-info {
+  li {
+    @extend %category-style;
+  }
+}
+
+.mail-check {
+  vertical-align: middle;
+  text-align: center;
+  form {
+    margin-bottom: -8px;
+    @extend %checkbox-style;
+  }
+}
+
+// th 빈 테이블이지만 공간을 지정해 주기 위해서
+.star-check-container {
+  width: 20px;
+}
+.star-check {
+  vertical-align: middle;
+  text-align: center;
+  form {
+    margin-bottom: -8px;
+    @extend %star-check-style;
+  }
+}
+
+
+%mail-list-style{
+  display: flex;
+}

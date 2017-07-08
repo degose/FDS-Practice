@@ -1,0 +1,164 @@
+// ! TableDesign header.scss
+@import "init";
+
+// head {
+//   position: fixed;
+// }
+
+.dashboard-bg {
+  height: $row-height * 3;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.01), 0 6px 6px rgba(0,0,0,0.01);
+}
+
+.logo a {
+  font-size: 2rem;
+  color: $base-color-1;
+  font-weight: 700;
+  line-height: $row-height * 3;
+  text-align: center;
+  display: block;
+}
+
+.main-menu {
+  display: flex;
+  flex-direction: row;
+  line-height: $row-height * 3;
+  justify-content: space-around;
+  align-items: center;
+  li a{
+    // font-size: 1.2rem;
+    color: $base-color-2;
+    font-weight: 500;
+    display: block;
+  }
+  li a:hover {
+    color: $base-color-1;
+  }
+  button {
+    background: url('../../css/image/ico-more.svg');
+    width: 18px;
+    height: 4px;
+    padding: 4px 0 0 0;
+    overflow: hidden;
+    cursor: pointer;
+    display: block;
+  }
+}
+
+.search-form {
+  line-height: $row-height * 3;
+  text-align: center;
+  position: relative;
+  input {
+    border-radius: 30px;
+    border-style: none;
+    border: 2px solid $base-color-3;
+    padding: 17px 50px;
+    color: $base-color-2;
+    font-size: 1.2rem;
+    width: 193px;
+    // [placeholder="Search"] {
+    //   color: $base-color-2;
+    // }
+  }
+  button {
+    background: url('../../css/image/ico-search.svg');
+    position: absolute;
+    top: 38px;
+    left: 60px;
+    width: 13px;
+    height: 13px;
+    padding: 13px 0 0 0;
+    overflow: hidden;
+  }
+}
+
+
+.user-aria {
+  line-height: $row-height * 3;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  .alram-group {
+    position: relative;
+    .alram-icon {
+      background-image: url('../../css/image/ico-alram.svg');
+      width: 16px;
+      height: 20px;
+      padding-top: 20px;
+      overflow: hidden;
+      // position: relative;
+    }
+    // .alram-icon::before{
+    //   content: "";
+    //   width: 6px;
+    //   height: 6px;
+    //   background: $point-color-1;
+    //   border-radius: 50%;
+    //   display: block;
+    //   position: absolute;
+    //   top: 0px;
+    //   right: 0px;
+    // }
+    .alram-icon-new{
+      content: "";
+      width: 6px;
+      height: 6px;
+      overflow: hidden;
+      padding-top: 6px;
+      background: $point-color-1;
+      border-radius: 50%;
+      display: block;
+      position: absolute;
+      top: -5px;
+      right: -5px;
+    }
+  }
+  img {
+    @extend %profile-avatar;
+  }
+  p {
+    display: inline-block;
+    color: $base-color-4;
+  }
+}
+
+.title-container {
+  width: $page-width - $gutter-width;
+  margin: $row-height $half-gutter-width 0;
+  height: $row-height * 6;
+  border-radius: 7px;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.01), 0 6px 6px rgba(0,0,0,0.01);
+}
+
+.directory-list {
+  margin-top: $row-height;
+  margin-left: 20px;
+  line-height: $row-height;
+  display: flex;
+  flex-direction: row;
+  li a{
+    display: inline-block;
+    color: $base-color-5;
+  }
+  li a:hover {
+    color: $base-color-1;
+  }
+  li::after {
+    content: "";
+    display: inline-block;
+    background: url('../../css/image/ico-arrow.svg');
+    width: 5px;
+    height: 8px;
+    margin: 0 15px 1px 15px;
+  }
+}
+.mail-heading {
+  margin-top: $row-height;
+  margin-left: 20px;
+  line-height: $row-height;
+  font-size: 3.6rem;
+  color: $base-color-4;
+  font-weight: 300;
+}
