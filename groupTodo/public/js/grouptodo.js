@@ -9,7 +9,7 @@
   'use strict';
 
   // 변수 설정들
-  var app, todo ,todo_buttons, todo_title, todo_content, todo_items, todo_storage, template, todo_item, target, remove_id, select, todo_items_1, todo_items_2, todo_items_3, value, e, value_1,value_2,value_3, template1 ,template2, template3;
+  var app, todo ,todo_buttons, todo_title, todo_content, todo_items, todo_storage, todo_storage1, todo_storage2, todo_storage3, template, todo_item, target, remove_id, select, todo_items_1, todo_items_2, todo_items_3, value, e, value_1,value_2,value_3, template1 ,template2, template3;
 
   var document = global.document;
   var todo_api_address = '';
@@ -22,7 +22,7 @@
 
     // 메모 데이타 주소
     var e = document.getElementById('user').options[document.getElementById('user').selectedIndex].text;
-        todo_api_address = "/" + e;   // << 데이터 저장되는 곳
+        todo_api_address = "/DB";   // << 데이터 저장되는 곳
 
     // html 요소 가져오기
     app = document.querySelector('.app');
@@ -64,8 +64,12 @@
       // console.log('데이터:', data); // []
       
       // toDo.json에 데이터를 storage에 참조
-      todo_storage = data;
-      // console.log("todo_storage",todo_storage);
+      todo_storage1 = data.user1;
+      todo_storage2 = data.user2;
+      todo_storage3 = data.user3;
+      console.log("todo_storage1",todo_storage1);
+      console.log("todo_storage2",todo_storage2);
+      console.log("todo_storage1",todo_storage3);
 
       // 데이터를 가져온 후 렌더링 해준다.
       render();
@@ -167,12 +171,13 @@
     template2 = '';
     template3 = '';
     // todo_items에 태그 넣기
-    // todo_items_1.innerHTML = '';
-    // todo_items_2.innerHTML = '';
-    // todo_items_3.innerHTML = '';
+    todo_items_1.innerHTML = '';
+    todo_items_2.innerHTML = '';
+    todo_items_3.innerHTML = '';
     // todo_storage에 목록들을 순환해서 tempate에 추가
-    todo_storage.forEach(function (todo) {
-      if ( value === "user1" ) {
+    // console.log(todo_storage);
+    todo_storage1.forEach(function (todo) {
+      // if ( value === "user1" ) {
         template1 += 
           '<article class="todo-item column message is-success">'+
             '<div class="message-header">'+
@@ -184,9 +189,11 @@
             '</div>'+
           '</article>'
         todo_items_1.innerHTML = template1;
-      }
-      else if ( value === "user2" ) {
-        template2 += 
+    });
+    // todo_items_3.innerHTML = template;
+    // todo_items에 태그 넣기
+    todo_storage2.forEach(function (todo) {
+      template2 += 
           '<article class="todo-item column message is-warning">'+
             '<div class="message-header">'+
               '<h5 class="todo-item-title">'+todo.title+'</h5>'+
@@ -196,10 +203,10 @@
               '<p class="todo-item-content">'+todo.content+'</p>'+
             '</div>'+
           '</article>'
-        todo_items_2.innerHTML = template2;  
-      }
-      else if ( value === "user3" ) {
-        template3 += 
+      todo_items_2.innerHTML = template2;  
+    });
+    todo_storage3.forEach(function (todo) {
+      template3 += 
           '<article class="todo-item column message is-info">'+
             '<div class="message-header">'+
               '<h5 class="todo-item-title">'+todo.title+'</h5>'+
@@ -209,25 +216,9 @@
               '<p class="todo-item-content">'+todo.content+'</p>'+
             '</div>'+
           '</article>'
-        todo_items_3.innerHTML = template3;
-      }
-      
-      // template += 
-      // '<article class="todo-item column message is-info">'+
-      //   '<div class="message-header">'+
-      //     '<h5 class="todo-item-title">'+todo.title+'</h5>'+
-      //     '<button data-remove-index="'+todo.id+'" type="button" class="delete" aria-label="할일 아이템 제거"></button>'+
-      //   '</div>'+
-      //   '<div class="message-body">'+
-      //     '<p class="todo-item-content">'+todo.content+'</p>'+
-      //   '</div>'+
-      // '</article>'
+
+      todo_items_3.innerHTML = template3;
     });
-    // todo_items_3.innerHTML = template;
-    // todo_items에 태그 넣기
-
-
-
 
 
 
