@@ -21,8 +21,9 @@
 
 
     // 메모 데이타 주소
-    var e = document.getElementById('user').options[document.getElementById('user').selectedIndex].text;
+    e = document.getElementById('user').options[document.getElementById('user').selectedIndex].text;
         todo_api_address = "/DB";   // << 데이터 저장되는 곳
+        // todo_api_address = "/" + e;
 
     // html 요소 가져오기
     app = document.querySelector('.app');
@@ -122,11 +123,12 @@
     };
 
     // 서버에 올리기(POST)
-    select = document.querySelector('select');
-    value = select.value;
+    // select = document.querySelector('select');
+    // value = select.value;
     
-    var e = document.getElementById('user').options[document.getElementById('user').selectedIndex].text;
-        todo_api_address = "/" + e;   // << 데이터 저장되는 곳
+    // var e = document.getElementById('user').options[document.getElementById('user').selectedIndex].text;
+        // todo_api_address = "/" + e;   // << 데이터 저장되는 곳
+        // todo_api_address = "/DB";
     $.post(todo_api_address, $.param(todo_item), function (data, status) {
       // .param 왜 해줬지? => 배열이나 객체를 string으로 바꿔줌( 왜냐하면 .post의 인자로 (api,string,콜백함수)가 와야해서)
       // 서버에 올린 후 가져오기(GET)

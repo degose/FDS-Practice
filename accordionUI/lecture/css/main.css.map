@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "main.css",
+	"sources": [
+		"../sass/main.sass"
+	],
+	"sourcesContent": [
+		"// ! accordion UI 실습 gose\n\n"
+	],
+	"names": [],
+	"mappings": ""
+}
