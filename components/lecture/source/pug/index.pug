@@ -1,0 +1,52 @@
+mixin noti()
+  //- `(class!=attributes.class)` 이거 뭐지? => 뒤에 믹스인으로 받아서 마크업 넣어줄때 class 추가해주기 위해서 써주는 pug 문법
+  .notification(class!=attributes.class)
+    button(type="button" aria-label="close notification").delete
+    //- `block` => 안써주면 안으로 컨텐츠가 들어가질 않네..;;
+    block
+
+
+
+
+
+
+<!DOCTYPE html>
+html(lang="ko-KR")
+head
+  meta(charset="UTF-8")
+  meta(name="viewport", content="width=device-width, initial-scale=1.0")
+  meta(http-equiv="X-UA-Compatible", content="ie=edge")
+  title Components 실습
+  link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+  link(rel="stylesheet", href="/node_modules/bulma/css/bulma.css")
+  link(rel="stylesheet", href="./css/main.css")
+
+body
+
+  .app.container
+    .columns
+      //- Notifications(알림)
+      .column.is-6
+        //- mixin에 정의
+        //- .notification.site-noti.is-info
+        //-   button(type="button" aria-label="close notification").delete
+        +noti()(class="")
+          p
+            //- `|`공백을 넣기 위함
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            strong Exercitationem laudantium, aperiam odit quis 
+            | sit magnam voluptas soluta necessitatibus, est. 
+            a(href="#") Necessitatibus tempora similique nam distinctio aperiam quis, laudantium aspernatur. Nemo, perferendis.
+        +noti()(class="is-info")
+          p
+            //- `|`공백을 넣기 위함
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            strong Exercitationem laudantium, aperiam odit quis 
+            | sit magnam voluptas soluta necessitatibus, est. 
+            a(href="#") Necessitatibus tempora similique nam distinctio aperiam quis, laudantium aspernatur. Nemo, perferendis.
+
+
+      //- modal
+      .column.is-6
+    script(src="/node_modules/jquery/dist/jquery.min.js")
+    script(src="./js/components.js")
