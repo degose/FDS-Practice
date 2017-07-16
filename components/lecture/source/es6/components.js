@@ -44,9 +44,9 @@
 
   
   // console 찍어보기
-  // let a = new Notification(' ');
-  // let a = Notification('.box');
-  // console.log(a);
+  let a = new Notification(' ');
+  let a = Notification('.box');
+  console.log(a);
 
   let b = new Notification('.delete')
   console.log(b);
