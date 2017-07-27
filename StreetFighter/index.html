@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>Street Fighter</title>
+  <link href="https://fonts.googleapis.com/css?family=Kalam:700" rel="stylesheet">
+  <link rel="stylesheet" href="css/StreetFighter.css">
+</head>
+<body>
+
+  <div v-cloak id="StreetFighter" :class="stage_class">
+    <div class="scene" :class="sceneClass">
+ 
+      <!-- START NEWGAME -->
+      <div class="scene__before-start" v-if="!is_start">
+        <img class="game__logo" src="images/Logo/sfv-logo.png" alt="Street Fighter" width="292" height="222">
+        <a @click.prevent="startGame" href class="game__start-message">{{ start_message }}</a>
+      </div>
+
+      <!-- GAME STARTED -->
+      <!-- CHARACTER HP -->
+      <!--  위에 로고가 지워지면 깜빡이는 로고 나온다.(v-else)  -->
+      <div class="scene__started" v-else>
+        <template v-for="(player,index) in players">
+          <div class="game__character">
+            <div class="game__character-hp">
+              <div class="game__character-hp--state" :style="{width: player.HP + '%'}"> {{player.HP}} </div>
+            </div>
+            <!-- CHARACTER IMAGE -->
+            <img :src="player.image" :alt="player.name" :style="player.style">
+          </div>
+          <!--  vs 이미지가 player숫자만큼 나와버려서 (for문 돌렸기 때문에) v-if  -->
+          <img v-if="index === 0" class="game__vs" src="images/vs.png" alt="VS">
+        </template>
+        <div class="game__controller">
+          <!-- LOOP BUTTONS -->
+          <!-- BUTTON TEXT -->
+          <button
+            type="button"
+            v-for="button in buttons"
+            :class="button.replace(' ', '-')"
+            class="game__controller-button"
+            @click="detectClickButtons">{{ button }}</button>
+        </div>
+      </div>
+
+      <!-- FINISH GAME -->
+      <!-- FINISH MESSAGE -->
+      <div class="scene__finished" v-if="is_finish">
+        <h2 class="scene__finished-message"> {{ finish_message }} </h2>
+        <div class="scene__finished-buttons">
+          <h3>Try Again Game?</h3>
+          <button type="button" @click="reGame">Yes</button>
+          <button type="button" @click="gameOver">No</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+<script src="https://unpkg.com/vue"></script>
+<script src="js/StreetFighter.js"></script>
+</body>
+</html>
