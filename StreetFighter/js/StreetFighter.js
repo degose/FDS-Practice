@@ -33,7 +33,7 @@
   };
   var randomDamage = function (min,max) {
     // 둘 중의 큰 값 반환
-    return Math.max( mix, randomCount(max) );
+    return Math.max( min, randomCount(max) );
   };
   var checkWin = function(p1,p2){
     if ( p1.HP <= 0 ) {
@@ -90,7 +90,7 @@
         });
       },
       detectClickButtons: function(e){
-        // 각 버튼을 각각 선택해야 되니가 e.target
+        // 각 버튼을 각각 선택해야 되니까 e.target
         switch(e.target.textCount) {
           case 'attack': this.attack(); break;
           case 'special attack': this.specialAttack(); break;

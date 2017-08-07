@@ -60,7 +60,7 @@
       }else{return alert('아무말이라도 써주세요.');};
 
    }
-   
+    
 
    function todoRemoveAll() {
       // for문을 돌려서 배열에 담긴 list_item을 하나하나 지우기
